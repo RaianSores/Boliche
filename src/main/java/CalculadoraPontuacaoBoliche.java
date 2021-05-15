@@ -9,7 +9,12 @@ public class CalculadoraPontuacaoBoliche {
             if(ehPar(indice) && ehSpare(jogadas[indice], jogadas[indice +1])) {
                 int proximaJogada = indice + 2;
                 resultado = resultado + jogadas[indice] + jogadas[proximaJogada];
-            }else {
+
+            } else if (ehStrike(jogadas[indice])) {
+                int proximaJogada = indice + 2;
+                resultado = resultado + jogadas[indice] + jogadas[proximaJogada] + jogadas[indice+1];
+
+            } else {
                 resultado = resultado + jogadas[indice];
             }
         }
@@ -22,5 +27,9 @@ public class CalculadoraPontuacaoBoliche {
 
     private boolean ehSpare(int valorJogada1, int valorJogada2) {
         return valorJogada1 + valorJogada2 == DEZ;
+    }
+
+    private boolean ehStrike(int valorStrike) {
+        return valorStrike == DEZ;
     }
 }

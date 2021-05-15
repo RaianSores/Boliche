@@ -7,7 +7,15 @@ public class CalculadoraPontuacaoBolicheTest {
     @Test
     public void deve_retornar_zero_quando_errar_todas_as_jogadas() {
         //arrange
-        var jogadas = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        var jogadas = new int[]{0, 0,
+                0, 0,
+                0, 0,
+                0, 0,
+                0, 0,
+                0, 0,
+                0, 0,
+                0, 0,
+                0, 0, 0};
 
         //action
         var resultado = new CalculadoraPontuacaoBoliche().pontuacaoDoJogo(jogadas);
